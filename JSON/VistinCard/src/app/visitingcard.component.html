@@ -1,0 +1,40 @@
+<h1>Displaying JSON Data to HTML</h1>
+
+<h2>Employee Data</h2>
+
+<!--
+
+For Loop ==> Need to Iterate till end of employee
+
+   *ngFor ==> For Loop
+    
+Switch Case ==> 1 ==> Banking Product
+                2 ==> Finance Product
+                3 ==> Commerce Product
+
+If Condition
+
+-->
+
+<div *ngFor="let cust of customers">
+
+    Customer Name : {{cust.custname}}  <!-- Vijay Kumar -->
+    Designation   : {{ cust.title}} <!-- Software Lead -->
+    Salary        : {{cust.salary}} <!-- 100000-->
+    <br>
+    Department    : <div [ngSwitch]="cust.department">
+         <span *ngSwitchCase="1"> Banking Product </span>
+         <span *ngSwitchCase="2"> Finance Product </span>
+         <span *ngSwitchCase="3"> Commerce Product </span>
+         <span *ngSwitchDefault> Others </span>
+
+    </div>
+    <br>
+    Address   :  {{cust.address}}
+    
+    <div *ngIf="cust.phones.length>0">
+
+        Phones:{{cust.phones}}
+    </div>
+ 
+</div>
