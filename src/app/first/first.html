@@ -1,0 +1,44 @@
+<p>first works!</p>
+<h2>userName : {{userName}}</h2>
+<h2>email : {{email}}</h2>
+<h2>phNumber : {{phNumber}}</h2>
+<h2>address : {{address}}</h2>
+
+<h2>My name is {{name}} and I am {{age}} years old </h2>
+<h2>{{customer.name}}</h2>
+<h2>{{customer.email}}</h2>
+<h2>{{customer.salary}}</h2>
+
+<div *ngFor="let cust of customers">
+  <h3>{{cust.name}} - {{cust.salary}}</h3>
+</div>
+
+<div [ngSwitch]="customer1.department">
+
+  <span *ngSwitchCase="1">Banking</span>
+  <span *ngSwitchCase="2">Finance</span>
+  <span *ngSwitchDefault>Others</span>
+
+</div>
+
+<div *ngFor="let ph of customer2.phones">
+  {{ph}}
+</div>
+
+<h2>Today's Date is: {{dateString}}</h2>
+
+<!-- INPUT -->
+<input 
+  [(ngModel)]="guestName"
+>
+<h3>Entered Name: {{guestName}}</h3>
+
+<button [disabled]="guestName.length < 3">
+  Submit
+</button>
+<!--<h2>Name: {{userNamenInit}}</h2> -->
+<h2>CHECK: {{customer3?.name}}</h2>
+    <h2>Salary: {{customer3?.salary}}</h2>
+<h3>
+  {{ customer3.salary > 50000 ? 'High Salary' : 'Low Salary' }}
+</h3>

@@ -1,13 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AccountlistComponent } from './accountlist/accountlist.component';
+import { First } from './first/first';
+import { Empdetails } from './empdetails/empdetails';
+import { Pipes } from './pipes/pipes';
+import { AgePipe } from './age-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,AccountlistComponent],
-  template: '<app-accountlist></app-accountlist>',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [Empdetails],
+  template: `
+    <h1>Welcome to Angular</h1>
+    <appHighlight></appHighlight>
+  `
 })
 export class App {
-  protected readonly title = signal('bankproject');
 }
