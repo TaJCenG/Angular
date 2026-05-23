@@ -1,18 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { First } from './first/first';
-import { Empdetails } from './empdetails/empdetails';
-import { Pipes } from './pipes/pipes';
-import { AgePipe } from './age-pipe';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { ProductComponent } from './products/product/product.component';
+import { EditproductComponent } from './products/editproduct/editproduct.component';
+import { UserComponent } from './users/user/user.component';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
+import { UsersComponent } from './users/users.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [Empdetails],
-  template: `
-    <h1>Welcome to Angular</h1>
-    <appHighlight></appHighlight>
-  `
+  imports: [RouterOutlet,RouterModule,CommonModule,FormsModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.css'
 })
 export class App {
+  protected readonly title = signal('routingProject');
 }

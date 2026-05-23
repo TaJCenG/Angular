@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs custom-tabs">
+        <li role="presentation" class="active" routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"><a routerLink="/home">Home</a></li>
+        <li role="presentation"><a routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li role="presentation"><a routerLink="/customers" routerLinkActive="active">Customers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+     <!-- <app-home></app-home> --> 
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+ <!--
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-users></app-users>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-products></app-products>
+    </div>
+  </div>
+</div> -->
